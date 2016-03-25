@@ -13,28 +13,36 @@ public class Gerbong {
     	private String tipegerbong;
 	private String idgerbong;
 	private int kapasitasgerbong;
+
+    public Gerbong(String tipegerbong, String idgerbong, int kapasitasgerbong) {
+        this.tipegerbong = tipegerbong;
+        this.idgerbong = idgerbong;
+        this.kapasitasgerbong = kapasitasgerbong;
+    }
+
+    public String getTipegerbong() {
+        return tipegerbong;
+    }
+
+    public String getIdgerbong() {
+        return idgerbong;
+    }
+
+    public int getKapasitasgerbong() {
+        return kapasitasgerbong;
+    }
+
+    public void setTipegerbong(String tipegerbong) {
+        this.tipegerbong = tipegerbong;
+    }
+
+    public void setIdgerbong(String idgerbong) {
+        this.idgerbong = idgerbong;
+    }
+
+    public void setKapasitasgerbong(int kapasitasgerbong) {
+        this.kapasitasgerbong = kapasitasgerbong;
+    }
 	
-	public Gerbong(String tipegerbong, String idgerbong, int kapasitasgerbong){
-		this.tipegerbong=tipegerbong;
-		this.idgerbong=idgerbong;
-		this.kapasitasgerbong=kapasitasgerbong;
-	}
-	public void setTipeGerbong(String tipegerbong){
-		this.tipegerbong=tipegerbong;
-	}
-	public String getTipeGerbong(){
-		return tipegerbong;
-	}
-	public void setKapasitasGerbong(int kapasitasgerbong){
-		this.kapasitasgerbong=kapasitasgerbong;
-	}
-	public int getKapasitasGerbong(){
-		return kapasitasgerbong;
-	}
-	public void setIdGerbong(String idgerbong){
-		this.idgerbong=idgerbong;
-	}
-	public String getIdGerbong(){
-		return idgerbong;
-	}
+	
 }

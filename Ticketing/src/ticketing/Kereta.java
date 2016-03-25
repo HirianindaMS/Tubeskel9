@@ -10,35 +10,68 @@ package ticketing;
  * @author Hirianinda M.S
  */
 public class Kereta {
-    private int idkereta;
+   private String namakereta;
 	private int kapasitaskursi = 120;
 	private String jadwalkeberangkatan;
 	private int jumlahgerbong;
-	Gerbong[] daftargerbong = new Gerbong[30];
-	
-	public addgerbong(Gerbong g){
-		jumlahgerbong++;
-		daftargerbong[jumlahgerbong]= g;
-	}
-	public addkursi(int kapasitaskursi){
-		this.kapasitaskursi = kapasitaskursi;
-	}
-	public void setIdKereta(int idkereta){
-		this.idkereta=idkereta;
-	}
-	public int getIdKereta(){
-		return idkereta;
-	}
-	public void setKapasitasKursi(int kapasitaskursi){
-		this.kapasitaskursi=kapasitaskursi;
-	}
-	public int getKapasitasKursi(){
-		return Kapasitaskursi;
-	}
-	public void setJadwalKeberangkatan(String jadwalkeberangkatan){
-		this.jadwalkeberangkatan=jadwalkeberangkatan;
-	}
-	public String getJadwalKeberangkatan(){
-		return jadwalkeberangkatan;
-	}
+        private String idkereta;
+	private Gerbong[] daftargerbong = new Gerbong[30];
+
+    public Kereta(String namakereta, String jadwalkeberangkatan, int kapasitaskursi, String idkereta) {
+        this.namakereta = namakereta;
+        this.jadwalkeberangkatan = jadwalkeberangkatan;
+        this.kapasitaskursi = kapasitaskursi;
+        this.idkereta = idkereta;
+    }
+
+    public String getNamakereta() {
+        return namakereta;
+    }
+
+    public int getKapasitaskursi() {
+        return kapasitaskursi;
+    }
+
+    public String getJadwalkeberangkatan() {
+        return jadwalkeberangkatan;
+    }
+
+
+    public void setNamakereta(String namakereta) {
+        this.namakereta = namakereta;
+    }
+
+    public void setKapasitaskursi(int kapasitaskursi) {
+        this.kapasitaskursi = kapasitaskursi;
+    }
+
+    public void setJadwalkeberangkatan(String jadwalkeberangkatan) {
+        this.jadwalkeberangkatan = jadwalkeberangkatan;
+    }
+
+    public String getIdkereta() {
+        return idkereta;
+    }
+
+    public void setIdkereta(String idkereta) {
+        this.idkereta = idkereta;
+    }
+
+   public void addgerbong(Gerbong g){
+		 if (this.jumlahgerbong < 30) {
+                     daftargerbong[jumlahgerbong]= g;
+                     jumlahgerbong++;
+                 }
+                 else System.out.println("Jumlah Gerbong sudah melebihi batas maksimum!");
+    }
+		 
+   public int getJumlahgerbong() {
+        return jumlahgerbong;
+    }
+   
+   public Gerbong getGerbong(int n) {
+        return daftargerbong[n];
+    }
+
 }
+

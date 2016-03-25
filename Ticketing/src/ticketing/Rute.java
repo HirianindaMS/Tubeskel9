@@ -10,40 +10,60 @@ package ticketing;
  * @author Hirianinda M.S
  */
 public class Rute {
-    private String statsiunawal;
-	private String statsiuntujuan;
-	private Statsiun[] daftarstatsiun = new Statsiun[100];
-	private Ticket[] daftarTiketDibeli;
-	private int ntiket;
-	
-	public Rute(String statsiunawal,String statsiuntujuan){
-		this.statsiunawal=statsiunawal;
-		this.statsiuntujuan=statsiuntujuan;
-	}
-	public void setStatsiunawal(String statsiunawal){
-		this.statsiunawal=statsiunawal;
-	}
-	public String getStatsiunawal(){
-		return statsiunawal;
-	}
-	public void setStatsiunTujuan(String statsiuntujuan){
-		this.statsiuntujuan=statsiuntujuan;
-	}
-	public String getStatsiunTujuan(){
-		return statsiuntujuan;
-	}
-	public daftarstatsiun(Statsiun s){
-		
-	}	
-	
-	public void createTiket (String nama, String asal, String tujuan, String kursi,long noIdentitas, String namaKereta)
-	{
-			daftarTiketDibeli[ntiket] = new Ticket(nama, asal, tujuan, kursi,noIdentitas,namaKereta);
-			ntiket++;
-	}
-	
-    public int getTiket() {
-        return ntiket;
-    }	
+    private String nmrute;
+    private Stasiun stasiunawal;
+    private Stasiun stasiuntujuan;
+    private Kereta[] daftarkereta = new Kereta[10];
+    private int nKereta = 0;
+  
+
+    public Rute(String nmrute, Stasiun stasiunawal, Stasiun stasiuntujuan) {
+        this.stasiunawal = stasiunawal;
+        this.stasiuntujuan = stasiuntujuan;
+        this.nmrute = nmrute;
+    }
+
+    public void setNmrute(String nmrute) {
+        this.nmrute = nmrute;
+    }
+
+    public String getNmrute() {
+        return nmrute;
+    }
+    
+    public Stasiun getStasiunawal() {
+        return stasiunawal;
+    }
+
+    public Stasiun getStasiuntujuan() {
+        return stasiuntujuan;
+    }
+
+    public Kereta[] getDaftarkereta() {
+        return daftarkereta;
+    } 
+
+    public void setStasiunawal(Stasiun stasiunawal) {
+        this.stasiunawal = stasiunawal;
+    }
+
+    public void setStasiuntujuan(Stasiun stasiuntujuan) {
+        this.stasiuntujuan = stasiuntujuan;
+    }
+    
+    public Kereta getKereta(int n) {
+        return daftarkereta[n];
+    }
+
+    public void addkereta(Kereta k){
+		 if (this.nKereta < 10) {
+                     daftarkereta[nKereta]= k;
+                     nKereta++;
+                 }
+                 else System.out.println("Jumlah Kereta pada rute ini sudah penuh");
+    }
+    
+    public int getNkereta() {
+        return nKereta;
+    }
 }
-       
